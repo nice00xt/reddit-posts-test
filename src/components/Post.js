@@ -12,7 +12,7 @@ export const Post = () => {
   }
 
   return (
-    <div>
+    <div className='post-sidebar'>
       <ul>
         { list.map(({ data: { title }}) => {
           return (

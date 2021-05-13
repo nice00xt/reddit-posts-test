@@ -1,0 +1,22 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "post-sidebar post-preview"
+    "post-sidebar post-preview";
+  height: 100vh;
+}
+
+.post-sidebar {
+  grid-area: post-sidebar;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-preview {
+  grid-area: post-preview;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+

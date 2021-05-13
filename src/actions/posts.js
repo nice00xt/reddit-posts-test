@@ -6,8 +6,6 @@ export const fetchPost = () => {
     type: FETCH_POSTS,
     payload: get("/top.json")
       .then(getResponseData())
-      .catch((err) => {
-        throw err;
-      })
+      .catch((err) => { throw err; })
   };
 };
