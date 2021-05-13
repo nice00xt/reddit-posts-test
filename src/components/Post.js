@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPost } from "../actions";
+import PostItem from './PostItem';
 
 export const Post = () => {
   const dispatch = useDispatch();
@@ -13,15 +14,14 @@ export const Post = () => {
 
   return (
     <div className='post-sidebar'>
-      <ul>
-        { list.map(({ data: { title }}) => {
-          return (
-            <li>
-              <span>{title}</span>
-            </li>
-          )
-        })}
-      </ul>
+      <div className='post-content'>
+        <div className='post-content__header'>
+          <h3 className='post-content__title'>Reddit Posts</h3>
+        </div>
+        <ul className='post-content__list'>
+          <PostItem list={list}/>
+        </ul>
+      </div>
     </div>
   );
 };
