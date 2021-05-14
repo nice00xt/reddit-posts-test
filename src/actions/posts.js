@@ -1,4 +1,4 @@
-import { FETCH_POSTS } from "../constants";
+import { FETCH_POSTS, POST_VIEW } from "../constants";
 import { get, getResponseData } from "../libs";
 
 export const fetchPost = () => {
@@ -6,6 +6,12 @@ export const fetchPost = () => {
     type: FETCH_POSTS,
     payload: get("/top.json")
       .then(getResponseData())
-      .catch((err) => { throw err; })
+      .catch((err) => {
+        throw err;
+      }),
   };
+};
+
+export const showPostView = (postView) => {
+  return { type: POST_VIEW, payload: postView };
 };

@@ -107,3 +107,14 @@
     }
   }
 }
+
+.post-view {
+  margin: 0 auto;
+  width: 1200px;
+  &__image {
+    margin-bottom: 20px;
+    img {
+      height: 500px;
+    }
+  }
+}

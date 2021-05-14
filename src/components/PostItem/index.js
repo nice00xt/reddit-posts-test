@@ -1,9 +1,12 @@
 import React from "react";
 import { getDistanceDate, formatNumComments } from "../../helpers";
 
-export const PostItem = ({ list }) => {
+export const PostItem = ({ list, dispatch, showPostView }) => {
+  const handleShowPost = (postData) => dispatch(showPostView(postData));
+
   return list.map(
-    ({ data: { title, thumbnail, author, created, num_comments } }) => {
+    ({ data }) => {
+      const { title, thumbnail, author, created, num_comments } = data;
       return (
         <li className="post-content__list">
           <div className="post-item">
@@ -13,7 +16,7 @@ export const PostItem = ({ list }) => {
                 {getDistanceDate(created)}
               </span>
             </div>
-            <div className="post-item__body">
+            <div className="post-item__body" onClick={() => handleShowPost(data)}>
               <div className="post-item__preview">
                 <img src={thumbnail} alt="" />
               </div>

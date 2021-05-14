@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPost } from "../../actions";
+import { fetchPost, showPostView } from "../../actions";
 import PostItem from '../PostItem';
 import Spinner from '../Spinner';
 
@@ -10,18 +10,22 @@ export const PostList = () => {
   useEffect(() => dispatch(fetchPost()), [dispatch]);
 
   return (
-    <div className='post-sidebar'>
+    <section className='post-sidebar'>
       {isLoading ? <Spinner /> : (        
         <div className='post-content fade-in--top'>
           <div className='post-content__header'>
             <h3 className='post-content__title'>Reddit Posts</h3>
           </div>
           <ul className='post-content__list'>
-            <PostItem list={list}/>
+            <PostItem
+              list={list}
+              showPostView={showPostView}
+              dispatch={dispatch}
+            />
           </ul>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 
