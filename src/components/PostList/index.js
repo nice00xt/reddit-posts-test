@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPost } from "../actions";
-import PostItem from './PostItem';
+import { fetchPost } from "../../actions";
+import PostItem from '../PostItem';
 
-export const Post = () => {
+export const PostList = () => {
   const dispatch = useDispatch();
   const { list, isLoading } = useSelector(({ posts }) => posts);
   useEffect(() => dispatch(fetchPost()), [dispatch]);
@@ -26,4 +26,4 @@ export const Post = () => {
   );
 };
 
-export default Post;
+export default PostList;

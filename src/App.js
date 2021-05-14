@@ -1,7 +1,7 @@
 import './styles/main.scss'
 import { Provider } from 'react-redux';
 import configureStore from './store';
-import Post from './components/Post';
+import PostList from './components/PostList';
 
 const store = configureStore();
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className='grid-container'>
-        <Post />
+        <PostList />
         <div className='post-preview'>
           preview
         </div>

@@ -25,6 +25,11 @@
 .post-content {
   overflow-x: scroll;
   height: 100vh;
+  position: relative;
+  &__title {
+    color: white;
+    text-align: center;
+  }
   &__list {
     list-style: none;
     padding: 9px;
@@ -92,5 +97,12 @@
   &__comments {
     color: grey;
     font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all .1s linear;
+    &:hover {
+      background-color: #3a3939;
+      padding: 5px 0;
+    }
   }
 }
