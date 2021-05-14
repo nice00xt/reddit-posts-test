@@ -1,0 +1,23 @@
+.fade-in--top {
+  opacity: 0;
+  transform: translateY(10px);
+  -webkit-animation-name: fadeintop;
+  animation-name: fadeintop;
+  animation-duration: 0.1s;
+  -webkit-animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+}
+
+@keyframes fadeintop {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
