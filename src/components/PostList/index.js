@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPost, showPostView } from "../../actions";
+import { fetchPost, showPostView, dismissPost } from "../../actions";
 import PostItem from '../PostItem';
 import Spinner from '../Spinner';
 
@@ -19,8 +19,9 @@ export const PostList = () => {
           <ul className='post-content__list'>
             <PostItem
               list={list}
-              showPostView={showPostView}
               dispatch={dispatch}
+              showPostView={showPostView}
+              dismissPost={dismissPost}
             />
           </ul>
         </div>

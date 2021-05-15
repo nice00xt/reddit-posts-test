@@ -1,4 +1,4 @@
-import { FETCH_POSTS, POST_VIEW } from "../constants";
+import { FETCH_POSTS, POST_VIEW, DISMISS_POST } from "../constants";
 import { get, getResponseData } from "../libs";
 
 export const fetchPost = () => {
@@ -15,3 +15,10 @@ export const fetchPost = () => {
 export const showPostView = (postView) => {
   return { type: POST_VIEW, payload: postView };
 };
+
+export const dismissPost = (postId) => {
+  return {
+    type: DISMISS_POST,
+    postId
+  }
+}
